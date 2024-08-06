@@ -53,7 +53,7 @@ function clickinggame(numero) {
     checkTile(numero)
     if (bot) {
         turnbott = true;
-        
+        disableButtons(true);
         turnobot()
         console.log("turnobot")
     }
@@ -158,7 +158,7 @@ function turnobot() {
     setTimeout(() => {
         botTurnLogic();
         disableButtons(false);
-    }, 1000); // 1000 milliseconds = 1 second delay
+    }, 1000);
 }
 
 function botTurnLogic() {
@@ -247,6 +247,7 @@ function riprova(tile) {
     container.innerHTML = matrixToTable(matrix);
     //colonna rossa
     if (turnobott) {
+        disableButtons(true);
         turnobot();
     }
 }
