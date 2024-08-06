@@ -29,14 +29,14 @@
           <div id="settings1">
             <label class="testosett">Seleziona colore:</label>
             <br>
-            <button id="gettonebuttona" class="gettonebutton" onclick="toggleGlow('gettonebuttona')"></button>
-            <button id="gettonebuttonb" class="gettonebutton" onclick="toggleGlow('gettonebuttonb')"></button>
+            <button id="gettonebuttona" class="gettonebutton" onclick="toggleGlow(event, 'gettonebuttona')"></button>
+            <button id="gettonebuttonb" class="gettonebutton" onclick="toggleGlow(event, 'gettonebuttonb')"></button>
           </div>
           <br>
           <div id="settings2">
             <label class="testosett">Modalità di gioco:</label>
-            <button class="button-19" onclick="closeModal(true)">1 vs 1</button>
-            <button class="button-19" onclick="closeModal(false)">1 vs CPU</button>
+            <button class="button-19" onclick="closeModal(event, true)">1 vs 1</button>
+            <button class="button-19" onclick="closeModal(event, false)">1 vs CPU</button>
           </div>
         </form>
       </div>

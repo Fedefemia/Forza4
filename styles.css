@@ -43,7 +43,7 @@ body {
 #campo {
     position: absolute;
     bottom: 3%;
-    width: 60%;
+    height: 62.2%;
     right: 1.45%;
     z-index: 1;
 }
@@ -317,7 +317,7 @@ table {
     position: absolute;
     bottom: 2.8%;
     width: 60%;
-    height: 65.5%;
+    height: 62.2%;
     right: 1.45%;
     z-index: -3;
     border-collapse: collapse;
@@ -340,3 +340,8 @@ td img {
     display: block;
     margin: auto;
 }
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5; /* Optional: to visually indicate the button is disabled */
+  }

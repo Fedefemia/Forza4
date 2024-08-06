@@ -8,6 +8,7 @@ let player1image;
 let player2image;
 let bot;
 let turnbott;
+
 function createMatrix(rows, cols, defaultValue) {
 
 
@@ -37,6 +38,7 @@ function showSection(sectionId) {
         var player2name = document.getElementById("Player2");
         player1name.innerHTML = "";
         player2name.innerHTML = "";
+        console.log("home")
     }
 }
 
@@ -51,11 +53,13 @@ function clickinggame(numero) {
     checkTile(numero)
     if (bot) {
         turnbott = true;
+        
         turnobot()
         console.log("turnobot")
     }
 }
-function closeModal(parametros) {
+function closeModal(event, parametros) {
+    event.preventDefault();
     modal.style.display = "none";
     var player1name = document.getElementById("Player1");
     var player2name = document.getElementById("Player2");
@@ -73,6 +77,10 @@ function closeModal(parametros) {
         player2image = "photo/gettoneviolatagliato.png"
 
     }
+
+    disableButtons(true);
+    setTimeout(() => disableButtons(false), 150);
+
     if (parametros) {
         if (player1 == 1) {
             player1name.innerHTML = "Player 1";
@@ -84,7 +92,7 @@ function closeModal(parametros) {
         }
         bot = false;
 
-        setTimeout(gioca1v1, 1000);
+        gioca1v1();
     }
     else {
         if (player1 == 1) {
@@ -97,18 +105,31 @@ function closeModal(parametros) {
         }
         bot = true;
 
-        setTimeout(gioca1vcpu, 1000);
+        gioca1vcpu();
     }
 }
-function toggleGlow(buttonId) {
+
+function disableButtons(disable) {
+    const buttons = document.querySelectorAll('.invisible-button');
+    buttons.forEach(button => {
+        if (disable) {
+            button.classList.add('disabled');
+        } else {
+            button.classList.remove('disabled');
+        }
+    });
+}
+
+function toggleGlow(event, buttonId) {
+    event.preventDefault();
+
     if (buttonId == "gettonebuttonb") {
         player1 = 2;
-    }
-    else {
+    } else {
         player1 = 1;
     }
-    const buttons = document.querySelectorAll('.gettonebutton');
 
+    const buttons = document.querySelectorAll('.gettonebutton');
     buttons.forEach(button => {
         button.classList.remove('active');
     });
@@ -133,11 +154,20 @@ function gioca1vcpu() {
     }
 }
 function turnobot() {
-
-    checkTile("bot")
+    disableButtons(true);
+    setTimeout(() => {
+        botTurnLogic();
+        disableButtons(false);
+    }, 1000); // 1000 milliseconds = 1 second delay
 }
+
+function botTurnLogic() {
+    checkTile("bot");
+}
+
 function checkTile(tile) {
     if (tile == "bot") {
+        
         let random = Math.floor(Math.random() * 7);
         console.log("random " + random);
 
@@ -199,17 +229,6 @@ function aggiornaturno() {
     container.innerHTML = matrixToTable(matrix);
     let winner = checkFourInARow(matrix);
     if (winner !== null) {
-        if (player1 == 1) {
-            switch (winner) {
-                case 1:
-                    winner = "CPU"
-                    break;
-                case 2:
-                    winner = "Player"
-                    break;
-            }
-        }
-        if (player1 == 2) {
             switch (winner) {
                 case 1:
                     winner = "Player"
@@ -218,7 +237,6 @@ function aggiornaturno() {
                     winner = "CPU"
                     break;
             }
-        }
 
         setTimeout(Vittoria(winner), 1000);
     }
@@ -325,3 +343,10 @@ function checkFourInARow(matrix) {
 function Vittoria(winner) {
     alert("player " + winner + " ha vinto")
 }
+function sleep(ms) {
+    const start = Date.now();
+    let now = start;
+    while (now - start < ms) {
+      now = Date.now();
+    }
+  }
