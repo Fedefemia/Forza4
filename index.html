@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forza 4!</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div id="home" class="section active">
+    <div>
+      <img src="photo/Logo.png" class="logo">
+      <div id="barra"></div>
+    </div>
+    <a id="giocaButt" type="button" href="#" onclick="showSection('gioca')" class="button">Gioca</a>
+  </div>
+  </div>
+
+  <div id="gioca" class="section">
+    <!--settings-->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h2 id="testosettBIG">Impostazioni</h2>
+        <br>
+        <form>
+          <div id="settings1">
+            <label class="testosett">Seleziona colore:</label>
+            <br>
+            <button id="gettonebuttona" class="gettonebutton" onclick="toggleGlow('gettonebuttona')"></button>
+            <button id="gettonebuttonb" class="gettonebutton" onclick="toggleGlow('gettonebuttonb')"></button>
+          </div>
+          <br>
+          <div id="settings2">
+            <label class="testosett">Modalità di gioco:</label>
+            <button class="button-19" onclick="closeModal(true)">1 vs 1</button>
+            <button class="button-19" onclick="closeModal(false)">1 vs CPU</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--interfaccia-->
+    <div id="bannersuperiore"></div>
+    <button class="image-button" onclick="showSection('home')">
+      <img src="photo/Logo.png" id="logoplay">
+    </button>
+    <img src="photo/schema.png" id="campo">
+    <div id="Player1"></div>
+    <div id="Player2"></div>
+    <img src="photo/gettonearancio.png" class="gettone" id="gettonea">
+    <img src="photo/gettoneviola.png" class="gettone" id="gettoneb">
+    <div id="basecampo"></div>
+    <div id="matrix-container"></div>
+    <!--buttonscampo-->
+    <div id="button-container">
+      <button class="invisible-button" onclick="clickinggame(0)"></button>
+      <button class="invisible-button" onclick="clickinggame(1)"></button>
+      <button class="invisible-button" onclick="clickinggame(2)"></button>
+      <button class="invisible-button" onclick="clickinggame(3)"></button>
+      <button class="invisible-button" onclick="clickinggame(4)"></button>
+      <button class="invisible-button" onclick="clickinggame(5)"></button>
+      <button class="invisible-button" onclick="clickinggame(6)"></button>
+      <button class="invisible-button" onclick="clickinggame(7)"></button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

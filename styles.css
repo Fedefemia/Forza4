@@ -1,0 +1,342 @@
+body {
+    background-color: #052446;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+#giocaButt {
+    position: absolute;
+    top: 330px;
+    left: 925px;
+    z-index: 1;
+}
+
+#classificaButt {
+    position: absolute;
+    top: 380px;
+    left: 913px;
+    z-index: 1;
+}
+
+.image-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-block;
+}
+#bannersuperiore{
+    background-color: #1A1438;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 12%;
+    top: 0%;
+    left: 0%;
+}
+#campo {
+    position: absolute;
+    bottom: 3%;
+    width: 60%;
+    right: 1.45%;
+    z-index: 1;
+}
+
+#basecampo {
+    position: absolute;
+    width: 60%;
+    background-color: #E0A600;
+    height: 3%;
+    bottom: 0%;
+    right: 1.45%;
+    z-index: -2;
+}
+
+.image-button img {
+    position: absolute;
+    height: 30%;
+    top: -10px;
+    left: -1px;
+
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.logo {
+    position: absolute;
+    top: 35px;
+    height: 288px;
+    padding-left: 42%;
+    z-index: 1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 3;
+}
+
+.modal-content {
+    background: linear-gradient(to top, #005373, #00B1DA);
+    padding: 20px;
+    width: 25%;
+    height: 70%;
+    margin-left: 37%;
+    margin-top: 7%;
+    border-radius: 10px;
+}
+
+#testosettBIG {
+    font-family: din-round, sans-serif;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.testosett {
+    font-family: din-round, sans-serif;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.gettoneimpost {
+    margin-left: 5%;
+    width: 40%;
+}
+
+.button-19 {
+    appearance: button;
+    background-color: #1899D6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: din-round, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
+    margin-top: 2%;
+}
+
+.button-19:after {
+    background-clip: padding-box;
+    background-color: #1CB0F6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+    user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+    cursor: auto;
+}
+
+.button-19:active {
+    border-width: 4px 0 0;
+    background: none;
+}
+
+#barra {
+    position: absolute;
+    background-color: #1c163a;
+    top: 85px;
+    width: 99.2%;
+    height: 200px;
+}
+
+.gettone {
+    position: absolute;
+    width: 12%;
+    left: -1%;
+}
+
+#gettonea {
+    top: 45%;
+}
+
+#gettoneb {
+    top: 25%;
+}
+
+.gettonebutton {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+#Player1{
+    position: absolute;
+    left: 10%;
+    top: 37%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    color: white;
+}
+#Player2{
+    position: absolute;
+    left: 10%;
+    top: 57%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    color: white;
+}
+.gettonebutton.active {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.7), 0 0 90px rgba(255, 255, 255, 0.5);
+}
+
+#gettonebuttona {
+    background: url('photo/gettoneviola.png') no-repeat center center;
+    background-size: 150px;
+}
+
+#gettonebuttonb {
+    background: url('photo/gettonearancio.png') no-repeat center center;
+    background-size: 150px;
+}
+
+.invisible-button {
+    opacity: 1;
+    width: 12.5%;
+    height: 100%;
+    position: absolute;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#button-container {
+    position: absolute;
+    width: 60%;
+    right: 1.45%;
+    height: 85.3%;
+    margin-top: 0.6%;
+}
+
+
+#button-container .invisible-button:nth-child(1) {
+    left: 0%;
+}
+
+#button-container .invisible-button:nth-child(2) {
+    left: 12.5%;
+}
+
+#button-container .invisible-button:nth-child(3) {
+    left: 25%;
+}
+
+#button-container .invisible-button:nth-child(4) {
+    left: 37.5%;
+}
+
+#button-container .invisible-button:nth-child(5) {
+    left: 50%;
+}
+
+#button-container .invisible-button:nth-child(6) {
+    left: 62.5%;
+}
+
+#button-container .invisible-button:nth-child(7) {
+    left: 75%;
+}
+
+#button-container .invisible-button:nth-child(8) {
+    left: 87.5%;
+}
+table {
+    position: absolute;
+    bottom: 2.8%;
+    width: 60%;
+    height: 65.5%;
+    right: 1.45%;
+    z-index: -3;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensures the table cells have fixed width */
+}
+
+td {
+    z-index: -2;
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    width: 12.5%; /* Set cell width to ensure consistency */
+    height: calc(66% / 4); /* Set cell height to ensure consistency */
+}
+
+td img {
+    z-index: -2;
+    width: 99%; /* Ensures the image fits within the cell */
+    max-height: 100%; /* Ensures the image fits within the cell */
+    display: block;
+    margin: auto;
+}
