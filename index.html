@@ -15,8 +15,12 @@
       <img src="photo/Logo.png" class="logo">
       <div id="barra"></div>
     </div>
-    <a id="giocaButt" type="button" href="#" onclick="showSection('gioca')" class="button">Gioca</a>
-  </div>
+    <button onclick="showSection('gioca')" id="Giocabut" class="button-30" role="button">Gioca</button>
+    <button onclick="updateByWins()" id="Winbut" class="button-30" role="button">Vittorie</button>
+    <button onclick="updateByLoses()" id="Losebut" class="button-30" role="button">Sconfitte</button>
+    <button onclick="updateByKD()" id="KDbut" class="button-30" role="button">Vittorie/Sconfitte</button>
+    <table id="classifica"></table>
+    <pre id="output" style="margin-top: 30%;"></pre>
   </div>
 
   <div id="gioca" class="section">
@@ -34,10 +38,18 @@
           </div>
           <br>
           <div id="settings2">
+            <p class="textsettings2">Player 1</p>
+            <input type="text" class="nomi" id="player1nome" placeholder="Player 1"></a>
+            <p class="textsettings2">Player 2</p>
+            <input type="text" class="nomi" id="player2nome" placeholder="Player 2"></a>
+          </div>
+
+          <div id="settings3">
             <label class="testosett">Modalità di gioco:</label>
             <button class="button-19" onclick="closeModal(event, true)">1 vs 1</button>
             <button class="button-19" onclick="closeModal(event, false)">1 vs CPU</button>
           </div>
+
         </form>
       </div>
     </div>

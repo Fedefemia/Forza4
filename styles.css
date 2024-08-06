@@ -10,13 +10,6 @@ body {
     display: block;
 }
 
-#giocaButt {
-    position: absolute;
-    top: 330px;
-    left: 925px;
-    z-index: 1;
-}
-
 #classificaButt {
     position: absolute;
     top: 380px;
@@ -31,7 +24,77 @@ body {
     cursor: pointer;
     display: inline-block;
 }
-#bannersuperiore{
+
+#Giocabut {
+    top: 30%;
+    width: 8%;
+    left: 46%;
+}
+
+#Winbut{
+    top: 49.8%;
+    width: 8%;
+    left: 35%;
+}
+
+#Losebut{
+    top: 49.8%;
+    width: 8%;
+    left: 57%;
+}
+
+#KDbut{
+    top: 49.8%;
+    width: 12%;
+    left: 78%;
+}
+
+.button-30 {
+    position: absolute;
+    align-items: center;
+    appearance: none;
+    background-color: #1C163A;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #1C163A 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #F6F4E6;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+.button-30:focus {
+    box-shadow: #1C163A 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #1C163A 0 -3px 0 inset;
+}
+
+.button-30:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #1C163A 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.button-30:active {
+    box-shadow: #1C163A 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+#bannersuperiore {
     background-color: #1A1438;
     position: absolute;
     z-index: -1;
@@ -40,6 +103,7 @@ body {
     top: 0%;
     left: 0%;
 }
+
 #campo {
     position: absolute;
     bottom: 3%;
@@ -86,9 +150,9 @@ body {
 
 .logo {
     position: absolute;
-    top: 35px;
-    height: 288px;
-    padding-left: 42%;
+    top: -2%;
+    width: 16%;
+    left: 42%;
     z-index: 1;
 }
 
@@ -204,9 +268,10 @@ body {
 #barra {
     position: absolute;
     background-color: #1c163a;
-    top: 85px;
-    width: 99.2%;
-    height: 200px;
+    top: 4%;
+    width: 99%;
+    left: 0.5%;
+    height: 20%;
 }
 
 .gettone {
@@ -232,22 +297,25 @@ body {
     border: none;
     transition: box-shadow 0.3s ease-in-out;
 }
-#Player1{
+
+#Player1 {
     position: absolute;
     left: 10%;
     top: 37%;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 16px;
     color: white;
 }
-#Player2{
+
+#Player2 {
     position: absolute;
     left: 10%;
     top: 57%;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 16px;
     color: white;
 }
+
 .gettonebutton.active {
     box-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.7), 0 0 90px rgba(255, 255, 255, 0.5);
 }
@@ -313,6 +381,7 @@ body {
 #button-container .invisible-button:nth-child(8) {
     left: 87.5%;
 }
+
 table {
     position: absolute;
     bottom: 2.8%;
@@ -321,7 +390,7 @@ table {
     right: 1.45%;
     z-index: -3;
     border-collapse: collapse;
-    table-layout: fixed; /* Ensures the table cells have fixed width */
+    table-layout: fixed;
 }
 
 td {
@@ -329,19 +398,85 @@ td {
     border: 1px solid black;
     padding: 8px;
     text-align: center;
-    width: 12.5%; /* Set cell width to ensure consistency */
-    height: calc(66% / 4); /* Set cell height to ensure consistency */
+    width: 12.5%;
+    height: calc(66% / 4);
+}
+
+
+.invisible-button :hover {
+    background-image: url(photo/gettonearancio.png);
+    background-position-y: 20%;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: 120%;
 }
 
 td img {
     z-index: -2;
-    width: 99%; /* Ensures the image fits within the cell */
-    max-height: 100%; /* Ensures the image fits within the cell */
+    width: 99%;
+    max-height: 100%;
     display: block;
     margin: auto;
 }
 
+.invisible-button.player1-hover:hover {
+    background-image: url(photo/gettoneviola.png);
+    background-position-x: center;
+    background-position-y: 20%;
+    background-repeat: no-repeat;
+    background-size: 130%;
+}
+
+.invisible-button.player2-hover:hover {
+    background-image: url(photo/gettonearancio.png);
+    background-position-x: center;
+    background-position-y: 20%;
+    background-repeat: no-repeat;
+    background-size: 130%;
+}
+
 .disabled {
     pointer-events: none;
-    opacity: 0.5; /* Optional: to visually indicate the button is disabled */
-  }
+}
+
+#settings2 {
+    margin-bottom: 10%;
+}
+
+.nomi {
+    background-color: white;
+    border-radius: 5%;
+    border-style: none;
+}
+
+::placeholder {
+    color: #00ADD6;
+    opacity: 0.7;
+    font-family: din-round, sans-serif;
+    font-weight: 550;
+}
+
+.textsettings2 {
+    font-family: din-round, sans-serif;
+    font-weight: 600;
+    color: white;
+}
+
+#classifica {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 90%;
+    height: auto;
+    border-radius: 5px;
+}
+
+tr {}
+
+#classificatd {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #1C163A;
+    border-color: transparent;
+}
