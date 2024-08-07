@@ -1,4 +1,5 @@
 var modal = document.getElementById("modal");
+var modal2 = document.getElementById("modal2");
 let player1 = 1;
 let matrix = [];
 createMatrix(4, 8, "");
@@ -47,10 +48,10 @@ function openModal() {
     document.getElementById("player1nome").value = "";
     document.getElementById("player2nome").value = "";
     createMatrix(4, 8, "");
+    modal2.style.display = "none";
     modal.style.display = "block";
     aggiornaturno();
 }
-
 
 function clickinggame(numero) {
     if (playing) {
@@ -59,7 +60,7 @@ function clickinggame(numero) {
 
         if (bot) {
             turnbott = true;
-            disableButtons(true);
+
             turnobot()
             console.log("turnobot")
         }
@@ -81,9 +82,6 @@ function closeModal(event, parametros) {
         player1image = "photo/gettonearanciotagliato.png";
         player2image = "photo/gettoneviolatagliato.png";
     }
-
-    disableButtons(true);
-    setTimeout(() => disableButtons(false), 150);
 
     if (parametros) {
         if (player1 == 1) {
@@ -159,8 +157,7 @@ function gioca1vcpu() {
 function turnobot() {
     disableButtons(true);
     setTimeout(() => {
-        botTurnLogic();
-        disableButtons(false);
+        botTurnLogic(); 
     }, 1000);
 }
 
@@ -172,12 +169,9 @@ function botTurnLogic() {
 
 function checkTile(tile) {
     if (tile == "bot") {
-
         let random = Math.floor(Math.random() * 8);
         console.log("random " + random);
-
         let occupata = true;
-
         for (var i = 3; i >= 0; i--) {
             if (matrix[i][random] == "") {
                 matrix[i][random] = turn;
@@ -187,8 +181,9 @@ function checkTile(tile) {
             }
         }
         if (occupata) {
-            console.log("occupataz " + occupata);
-            checkTile("bot");
+            if(checkSpazi()){
+                turnobot()
+            }
         }
         else {
             if (turn == 1) {
@@ -198,6 +193,7 @@ function checkTile(tile) {
                 turn = 1;
             }
             aggiornaturno();
+            disableButtons(false);
         }
     }
     else {
@@ -211,10 +207,11 @@ function checkTile(tile) {
                 break;
             }
         }
-        console.log(matrix[i][tile])
-        console.log("occupata " + occupata)
         if (occupata) {
-            riprova(tile);
+            if(checkSpazi()){
+                riprova(tile);
+            }
+            
         }
         else {
             if (turn == 1) {
@@ -276,14 +273,11 @@ function updateHoverClass() {
 
 
 function riprova(tile) {
-    console.log("riprova")
+    console.log("riprova");
     container.innerHTML = matrixToTable(matrix);
-    //colonna rossa
-    if (turnobott) {
-        disableButtons(true);
-        turnobot();
-    }
+    setTimeout(turnobot, 1000);
 }
+
 
 function matrixToTable(matrix) {
     let table = '<table>';
@@ -376,9 +370,10 @@ function checkFourInARow(matrix) {
 }
 function Vittoria(winnerName, loserName) {
     playing = false;
-    disableButtons(true);
     console.log("The winner is " + winnerName + " and the loser is " + loserName);
-    showSection('home')
+    modal2.style.display = "block";
+    let outputwinn = document.getElementById("winnersout");
+    outputwinn.innerHTML = "Winner: " + winnerName
     updateUserStats(winnerName, true);
     updateUserStats(loserName, false);
 }
@@ -430,7 +425,7 @@ function updateByWins() {
             kd = stats.wins
         }
         else {
-            kd = stats.wins / stats.loses
+            kd = Math.round(stats.wins / stats.loses*100)/100
         }
         output.innerHTML += `<tr><td id="classificatd">${stats.name} </td><td id="classificatd">${stats.wins} </td><td id="classificatd">${stats.loses}</td><td id="classificatd">${kd}</td></tr>\n`;
 
@@ -464,7 +459,7 @@ function updateByLoses() {
             kd = stats.wins
         }
         else {
-            kd = stats.wins / stats.loses
+            kd = Math.round(stats.wins / stats.loses*100)/100
         }
         output.innerHTML += `<tr><td id="classificatd">${stats.name} </td><td id="classificatd">${stats.wins} </td><td id="classificatd">${stats.loses}</td><td id="classificatd">${kd}</td></tr>\n`;
 
@@ -488,13 +483,13 @@ function updateByKD() {
             let jkd
             let ikd
             if (entries[j][1].loses == 0) {
-                jkd = entries[j][1].wins
+                jkd = entries[j][1].wins + 0.1
             }
             else {
                 jkd = (entries[j][1].wins) / (entries[j][1].loses)
             }
             if (entries[i][1].loses == 0) {
-                ikd = entries[i][1].wins
+                ikd = entries[i][1].wins + 0.1
             }
             else {
                 ikd = (entries[i][1].wins) / (entries[i][1].loses)
@@ -512,12 +507,30 @@ function updateByKD() {
             kd = stats.wins
         }
         else {
-            kd = stats.wins / stats.loses
+            kd = Math.round(stats.wins / stats.loses*100)/100
         }
         output.innerHTML += `<tr><td id="classificatd">${stats.name} </td><td id="classificatd">${stats.wins} </td><td id="classificatd">${stats.loses}</td><td id="classificatd">${kd}</td></tr>\n`;
 
     }
 }
-document.addEventListener('DOMContentLoaded', () => {
-    updateDisplay();
-});
+
+function checkSpazi(){
+    let spazio = false;
+    for (var j = 7; j >= 0; j--) {
+        for (var i = 3; i >= 0; i--) {
+            if (matrix[i][j] == "") {
+                spazio = true;
+                break;
+            }
+        }
+    }
+    if (spazio) {
+        
+        return true;
+    }
+    else {
+        
+        console.log("finiti gli spazi")
+        return false;
+    }
+}
