@@ -1,0 +1,772 @@
+body {
+    background-color: #052446;
+    background-image: url(photo/sfondo.png);
+    background-size:cover;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+#classificaButt {
+    position: absolute;
+    top: 380px;
+    left: 913px;
+    z-index: 1;
+}
+
+.image-button {
+    position: absolute;
+    height: 100%;
+    top: 3%;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-block;
+}
+#Giocabut{
+    top: 45%;
+    right: 1.5%;
+}
+#Classifbut{
+    top: 55%;
+    right: 1.5%;
+}
+.button-with-icon {
+    position: absolute;
+    width: 12.5%;
+    background-color: #D85E4D;
+    height: 6%;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #D85E4D;
+    font-family: "Istok Web", sans-serif;
+    letter-spacing: 1px;
+    padding: 0 12px;
+    text-align: center;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-radius: 3px;
+    outline: none;
+    user-select: none;
+    cursor: pointer;
+    transform: translateY(0px);
+    box-shadow:
+      inset 0 30px 30px -15px rgba(255, 255, 255, 0.1),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+      inset 0 1px 20px rgba(0, 0, 0, 0),
+      0 3px 0 #D85E4D,
+      0 3px 2px rgba(0, 0, 0, 0.2),
+      0 5px 10px rgba(0, 0, 0, 0.1),
+      0 10px 20px rgba(0, 0, 0, 0.1);
+    background: #D85E4D;
+    color: white;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    transition: 150ms all ease-in-out;
+  }
+  
+  .button-with-icon .icon {
+    margin-right: 8px;
+    height: 60%;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .button-with-icon:active {
+    transform: translateY(3px);
+    box-shadow:
+      inset 0 16px 2px -15px rgba(0, 0, 0, 0),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+      inset 0 1px 20px rgba(0, 0, 0, 0.1),
+      0 0 0 #F8A132,
+      0 0 0 2px rgba(255, 255, 255, 0.5),
+      0 0 0 rgba(0, 0, 0, 0),
+      0 0 0 rgba(0, 0, 0, 0);
+  }
+  
+  .button-with-icon:hover .text {
+    transform: translateX(400%);
+  }
+
+  #Giocabut:hover .icon {
+    transform: translate(120%);
+  }
+  
+  #Classifbut:hover .icon {
+    transform: translate(260%);
+  }
+
+  .text {
+    transition: all 0.5s ease-in-out;
+  }
+  .wrapper {
+    position: absolute;
+    display: inline-flex;
+    font-family: "Poppins", sans-serif;
+    top: 80%;
+    right: 3.5%;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: transparent;
+    border-radius: 5px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .github:hover{
+    color: #fff;
+  }
+  .wrapper .github:hover .tooltip,
+  .wrapper .github:hover .tooltip::before {
+    background: #fff;
+    color: black;
+  }
+  .wrapper .itisrossi:hover .tooltip,
+  .wrapper .itisrossi:hover .tooltip::before {
+    background: #1da1f2;
+    color: #fff;
+  }
+  #icon-img1 {
+    position: absolute;
+    height: 80%;
+    z-index: -1;
+    top: 16%;
+    left: 69%;
+  }
+  #icon-img11 {
+    position: absolute;
+    height: 80%;
+    z-index: 3;
+    top: 16%;
+    left: 69%;
+    pointer-events: none;
+  }
+  #icon-img2 {
+    position: absolute;
+    height: 120%;
+    z-index: -1;
+    top: 0%;
+    left: 16%;
+  }
+  #icon-img22 {
+    position: absolute;
+    height: 120%;
+    z-index: 5;
+    top: 0%;
+    left: 16%;
+    pointer-events: none;
+  }
+  #but1{
+    position: absolute;
+    height: 85%;
+    left: 0%;
+    top: 20%;
+  }
+  #but2{
+    position: absolute;
+    height: 65%;
+    left: 25%;
+    top: 25%;
+  }
+
+#Winbut{
+    top: 4.5%;
+    width: 8%;
+    left: 28%;
+    font-family: din-round, sans-serif;
+    font-weight: 550;
+    letter-spacing: 1px;
+}
+
+#Losebut{
+    top: 4.5%;
+    width: 8%;
+    left: 48%;
+    font-family: din-round, sans-serif;
+    font-weight: 550;
+    letter-spacing: 1px;
+}
+
+#KDbut{
+    top: 4.5%;
+    width: 12%;
+    left: 66%;
+    font-family: din-round, sans-serif;
+    font-weight: 550;
+    letter-spacing: 1px;
+}
+
+.button-30 {
+    position: absolute;
+    align-items: center;
+    appearance: none;
+    background-color: #1C163A;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #1C163A 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #F6F4E6;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+.button-30:focus {
+    box-shadow: #1C163A 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #1C163A 0 -3px 0 inset;
+}
+
+.button-30:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #1C163A 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.button-30:active {
+    box-shadow: #1C163A 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+#campo {
+    position: absolute;
+    bottom: 3%;
+    width: 60%;
+    height: 62%;
+    right: 1.45%;
+    z-index: 1;
+}
+
+#basecampo {
+    position: absolute;
+    width: 60%;
+    background-color: #E0A600;
+    height: 3%;
+    bottom: 0%;
+    right: 1.45%;
+    z-index: -2;
+}
+
+#dietrocampo{
+    position: absolute;
+    bottom: 3%;
+    width: 60%;
+    height: 62%;
+    z-index: 0;
+    right: 1.45%;
+    background-color: rgba(28, 22, 58, 0.75);
+}
+
+#dietrobanner{
+    position: absolute;
+    background-color: #1c163a;
+    top: 3%;
+    width: 14.5%;
+    left: 0.5%;
+    height: 94%;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+.image-button img {
+    position: absolute;
+    height: 30%;
+    top: -10px;
+    left: -1px;
+
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.logo {
+    position: absolute;
+    top: 3%;
+    height: 32%;
+    right: 0%;
+    z-index: 1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 3;
+}
+
+.modal-content {
+    background: linear-gradient(to top, #1C163A, #1C163A);
+    padding: 20px;
+    width: 25%;
+    height: 70%;
+    margin-left: 37%;
+    margin-top: 7%;
+    border-radius: 10px;
+}
+
+.modal2 {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 3;
+    border-radius: 10px;
+    text-align: center;
+    background-color: grey;
+    background-color: rgba(66, 66, 66, 0.6);
+}
+
+#testosettBIG {
+    font-family: din-round, sans-serif;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.testosett {
+    font-family: din-round, sans-serif;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.gettoneimpost {
+    margin-left: 5%;
+    width: 40%;
+}
+
+.button-19 {
+    appearance: button;
+    background-color: #d86d5f;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: din-round, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
+    margin-top: 2%;
+}
+
+.button-19:after {
+    background-clip: padding-box;
+    background-color: #D85D4C;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+    user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.2);
+}
+
+.button-19:disabled {
+    cursor: auto;
+}
+
+.button-19:active {
+    border-width: 4px 0 0;
+    background: none;
+}
+
+#barra {
+    position: absolute;
+    background-color: #1c163a;
+    top: 3%;
+    width: 14.5%;
+    right: 0.5%;
+    height: 94%;
+    z-index: -5;
+    border-radius: 5px;
+}
+
+.gettone {
+    position: absolute;
+    width: 12%;
+    left: -0.5%;
+}
+
+#gettonea {
+    top: 70%;
+}
+
+#gettoneb {
+    top: 50%;
+}
+
+.gettonebutton {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#Player1 {
+    position: absolute;
+    left: 10.5%;
+    top: 62%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+#Player2 {
+    position: absolute;
+    left: 10.5%;
+    top: 82%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+.gettonebutton.active {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.7), 0 0 90px rgba(255, 255, 255, 0.5);
+}
+
+#gettonebuttona {
+    background: url('photo/gettoneviola.png') no-repeat center center;
+    background-size: 150px;
+}
+
+#gettonebuttonb {
+    background: url('photo/gettonearancio.png') no-repeat center center;
+    background-size: 150px;
+}
+
+.invisible-button {
+    opacity: 1;
+    width: 12.5%;
+    height: 100%;
+    position: absolute;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#button-container {
+    position: absolute;
+    width: 60%;
+    right: 1.45%;
+    height: 85.3%;
+    margin-top: 0.6%;
+}
+
+
+#button-container .invisible-button:nth-child(1) {
+    left: 0%;
+}
+
+#button-container .invisible-button:nth-child(2) {
+    left: 12.5%;
+}
+
+#button-container .invisible-button:nth-child(3) {
+    left: 25%;
+}
+
+#button-container .invisible-button:nth-child(4) {
+    left: 37.5%;
+}
+
+#button-container .invisible-button:nth-child(5) {
+    left: 50%;
+}
+
+#button-container .invisible-button:nth-child(6) {
+    left: 62.5%;
+}
+
+#button-container .invisible-button:nth-child(7) {
+    left: 75%;
+}
+
+#button-container .invisible-button:nth-child(8) {
+    left: 87.5%;
+}
+
+table {
+    position: absolute;
+    bottom: 2.8%;
+    width: 60%;
+    height: 62.2%;
+    right: 1.45%;
+    z-index: 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {
+    z-index: -2;
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    width: 12.5%;
+    height: calc(66% / 4);
+}
+
+
+.invisible-button :hover {
+    background-image: url(photo/gettonearancio.png);
+    background-position-y: 20%;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: 120%;
+}
+
+td img {
+    z-index: -2;
+    width: 99%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+
+.invisible-button.player1-hover:hover {
+    background-image: url(photo/gettoneviola.png);
+    background-position-x: center;
+    background-position-y: 20%;
+    background-repeat: no-repeat;
+    background-size: 130%;
+}
+
+.invisible-button.player2-hover:hover {
+    background-image: url(photo/gettonearancio.png);
+    background-position-x: center;
+    background-position-y: 20%;
+    background-repeat: no-repeat;
+    background-size: 130%;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+#settings2 {
+    margin-bottom: 10%;
+}
+
+.nomi {
+    background-color: white;
+    border-radius: 5%;
+    border-style: none;
+}
+
+::placeholder {
+    color: #00ADD6;
+    opacity: 0.7;
+    font-family: din-round, sans-serif;
+    font-weight: 550;
+}
+
+.textsettings2 {
+    font-family: din-round, sans-serif;
+    font-weight: 600;
+    color: white;
+}
+
+#classifica {
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    width: 80%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#winnersout{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    top: 15%;
+    font-family: din-round, sans-serif;
+    font-size: 200%;
+    width: fit-content;
+    left: 0%;
+    width: 100%;
+    background-color: #1C163A;
+    padding: 2%;
+    text-align: center;
+}
+
+#classificatd {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #1C163A;
+    border-color: transparent;
+}
+
+#Closebutton {
+    position: absolute;
+    width: 12%;
+    top: 45%;
+    left: 46%;
+    align-items: center;
+    appearance: none;
+    background-color: #1C163A;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #1C163A 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #F6F4E6;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 6%;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+#Closebutton:focus {
+    box-shadow: #1C163A 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #1C163A 0 -3px 0 inset;
+}
+
+#Closebutton:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #1C163A 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+#Closebutton:active {
+    box-shadow: #1C163A 0 3px 7px inset;
+    transform: translateY(2px);
+}
