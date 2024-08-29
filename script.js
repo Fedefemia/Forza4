@@ -10,6 +10,7 @@ let bot;
 let turnbott;
 let playing;
 let turn = 1;
+let classif = false;
 updateByLoses();
 
 function createMatrix(rows, cols, defaultValue) {
@@ -30,19 +31,32 @@ function showSection(sectionId) {
     sections.forEach(function (section) {
         section.classList.remove('active');
     });
-    document.getElementById(sectionId).classList.add('active');
-    if (sectionId == "gioca") {
-        openModal();
-    }
-    if (sectionId == "home") {
+    
+    if (sectionId === "home" || sectionId === "classif") {
+        if(classif){
+            document.getElementById("classif").classList.remove('active');
+            classif = false;
+        }
+        else{
+            document.getElementById("classif").classList.add('active');
+            classif = true;
+        }
+        document.getElementById("home").classList.add('active');
         var player1name = document.getElementById("Player1");
         var player2name = document.getElementById("Player2");
         player1name.innerHTML = "";
         player2name.innerHTML = "";
-        console.log("home")
+        console.log("home");
         updateByKD();
     }
+
+    else if (sectionId == "gioca") {
+        document.getElementById("gioca").classList.add('active');
+        openModal();
+    }
+   
 }
+
 
 function openModal() {
     document.getElementById("player1nome").value = "";
@@ -106,6 +120,7 @@ function closeModal(event, parametros) {
     }
     aggiornaturno();
 }
+    
 
 function disableButtons(disable) {
     const buttons = document.querySelectorAll('.invisible-button');
@@ -533,4 +548,12 @@ function checkSpazi(){
         console.log("finiti gli spazi")
         return false;
     }
+}
+
+function openGitHub() {
+    window.open('https://github.com/Fedefemia/Forza4', '_blank').focus();
+}
+
+function openItis() {
+    window.open('https://www.itisrossi.edu.it/', '_blank').focus();
 }
