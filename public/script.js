@@ -298,7 +298,7 @@ function matrixToTable(matrix) {
     let table = '<table>';
 
     matrix.forEach(row => {
-        table += '<tr>';
+        table += '<tr">';
         row.forEach(cell => {
             if (cell == 1) {
                 table += `<td><img src="${player1image}"></img></td>`;
@@ -417,7 +417,7 @@ function updateByWins() {
     const userStats = JSON.parse(localStorage.getItem('userStats')) || {};
     const output = document.getElementById('classifica');
     output.innerHTML = '';
-    output.innerHTML += `<tr><td id="classificatd">Nome: </td><td id="classificatd">Vittorie</td><td id="classificatd">Sconfitte</td><td id="classificatd">Vittorie/Sconfitte</td></tr>\n`;
+    output.innerHTML += `<tr><td id="classificatd">Nome: </td><td id="classificatd"></td><td id="classificatd"></td><td id="classificatd"></td></tr>\n`;
     const entries = [];
     for (const username in userStats) {
         if (userStats.hasOwnProperty(username)) {
@@ -451,7 +451,7 @@ function updateByLoses() {
     const userStats = JSON.parse(localStorage.getItem('userStats')) || {};
     const output = document.getElementById('classifica');
     output.innerHTML = '';
-    output.innerHTML += `<tr><td id="classificatd">Nome: </td><td id="classificatd">Vittorie</td><td id="classificatd">Sconfitte</td><td id="classificatd">Vittorie/Sconfitte</td></tr>\n`;
+    output.innerHTML += `<tr><td id="classificatd">Nome: </td><td id="classificatd"></td><td id="classificatd"></td><td id="classificatd"></td></tr>\n`;
     const entries = [];
     for (const username in userStats) {
         if (userStats.hasOwnProperty(username)) {
@@ -485,7 +485,7 @@ function updateByKD() {
     const userStats = JSON.parse(localStorage.getItem('userStats')) || {};
     const output = document.getElementById('classifica');
     output.innerHTML = '';
-    output.innerHTML += `<tr><td id="classificatd">Nome: </td><td id="classificatd">Vittorie</td><td id="classificatd">Sconfitte</td><td id="classificatd">Vittorie/Sconfitte</td></tr>\n`;
+    output.innerHTML += `<tr><td id="classificatd">Nome: </td><td id="classificatd"></td><td id="classificatd"></td><td id="classificatd"></td></tr>\n`;
     const entries = [];
     let kd
     for (const username in userStats) {

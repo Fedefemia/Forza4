@@ -20,16 +20,16 @@
         <img src="photo/but2back2.png" id="icon-img22" />
         <li class="icon github" onclick="openGitHub()" id="`githubic">
           <span class="tooltip">GitHub</span>
-          <img src="photo/logogithub.png" id="but1"/>
+          <img src="photo/logogithub.png" id="but1" />
         </li>
         <img src="photo/but1back.png" id="icon-img1" />
         <img src="photo/but1back1.png" id="icon-img11" />
         <li class="icon itisrossi" onclick="openItis()">
           <span class="tooltip">Itis Rossi</span>
-          <img src="photo/logorossi.png" id="but2"/>
+          <img src="photo/logorossi.png" id="but2" />
           </svg>
         </li>
-        
+
       </ul>
 
     </div>
@@ -44,10 +44,10 @@
     </button>
     <button id="Classifbut" class="button-with-icon" onclick="showSection('classif')">
       <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4 10h16v2H4v-2zm0 6h10v2H4v-2z" fill="currentColor"/>
-        <circle cx="19" cy="17" r="1" fill="currentColor"/>
-        <circle cx="19" cy="12" r="1" fill="currentColor"/>
-    </svg>
+        <path d="M4 10h16v2H4v-2zm0 6h10v2H4v-2z" fill="currentColor" />
+        <circle cx="19" cy="17" r="1" fill="currentColor" />
+        <circle cx="19" cy="12" r="1" fill="currentColor" />
+      </svg>
       <span class="text">Classifica</span>
     </button>
   </div>
@@ -63,31 +63,27 @@
     <!--settings-->
     <div id="modal" class="modal">
       <div class="modal-content">
-        <h2 id="testosettBIG">Impostazioni</h2>
-        <br>
-        <form>
-          <div id="settings1">
-            <label class="testosett">Seleziona colore:</label>
-            <br>
-            <button id="gettonebuttona" class="gettonebutton" onclick="toggleGlow(event, 'gettonebuttona')"></button>
-            <button id="gettonebuttonb" class="gettonebutton" onclick="toggleGlow(event, 'gettonebuttonb')"></button>
-          </div>
-          <br>
-          <div id="settings2">
-            <p class="textsettings2">Player 1</p>
-            <input type="text" class="nomi" id="player1nome" placeholder="Player 1"></a>
-            <p class="textsettings2">Player 2</p>
-            <input type="text" class="nomi" id="player2nome" placeholder="Player 2"></a>
-          </div>
 
+        <h2 id="testosettBIG">Impostazioni</h2>
+        <form>
+          <label id="settings1">Seleziona colore:</label>
+          <button id="gettonebuttona" class="gettonebutton" onclick="toggleGlow(event, 'gettonebuttona')"></button>
+          <button id="gettonebuttonb" class="gettonebutton" onclick="toggleGlow(event, 'gettonebuttonb')"></button>
+          <div id="settings2">
+            <p id="textsettings1">Player 1</p>
+            <input type="text" id="player1nome" placeholder="Player 1"></a>
+            <p id="textsettings2">Player 2</p>
+            <input type="text" id="player2nome" placeholder="Player 2"></a>
+          </div>
           <div id="settings3">
             <label class="testosett">Modalità di gioco:</label>
             <button class="button-19" onclick="closeModal(event, true)">1 vs 1</button>
             <button class="button-19" onclick="closeModal(event, false)">1 vs CPU</button>
           </div>
-
         </form>
+
       </div>
+
     </div>
     <div id="modal2" class="modal2">
       <div id="winnersout"></div>
@@ -97,15 +93,19 @@
     <button class="image-button" onclick="showSection('home')">
       <img src="photo/Logo.png" id="logoplay">
     </button>
-    <img src="photo/schema.png" id="campo">
-    <div id="dietrocampo"></div>
+
     <div id="dietrobanner"></div>
     <div id="Player1"></div>
     <div id="Player2"></div>
     <img src="photo/gettonearancio.png" class="gettone" id="gettonea">
     <img src="photo/gettoneviola.png" class="gettone" id="gettoneb">
+    <div id="containercampo">
+      <div id="matrix-container"></div>
+      <img src="photo/schema.png" id="campo">
+      <div id="dietrocampo"></div>
+    </div>
+
     <div id="basecampo"></div>
-    <div id="matrix-container"></div>
     <!--buttonscampo-->
     <div id="button-container">
       <button class="invisible-button" onclick="clickinggame(0)"></button>
